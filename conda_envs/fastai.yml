@@ -1,0 +1,15 @@
+name: stats2
+channels:
+- fastai
+- pytorch
+- conda-forge
+dependencies:
+- python=3.8
+- fastai
+- pytorch
+- torchvision
+- numpy
+- scikit-learn
+- seaborn
+- matplotlib
+- jupyterlab
