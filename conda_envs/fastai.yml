@@ -1,4 +1,4 @@
-name: stats2
+name: fastai
 channels:
 - fastai
 - pytorch
@@ -13,3 +13,4 @@ dependencies:
 - seaborn
 - matplotlib
 - jupyterlab
+- conda-build
