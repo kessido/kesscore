@@ -17,3 +17,7 @@ def _listify(f=None):
 lmap = _listify(map)
 lzip = _listify(zip)
 lfilter = _listify(filter)
+
+# Cell
+def _all(self:L)->bool:return all(self)
+L.all = _all
