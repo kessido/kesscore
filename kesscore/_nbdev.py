@@ -2,11 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"upfl": "00_core.ipynb",
-         "upfls": "00_core.ipynb",
-         "say_hello": "00_core.ipynb"}
+index = {}
 
-modules = ["core.py"]
+modules = ["functional.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
