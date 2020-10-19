@@ -11,7 +11,7 @@ def untar_fdrive(fid, fname, destfold, extract_func=file_extract):
     'download https://drive.google.com/uc?id={fid} to destfold/fname.tar.gz and extract it to destfold/fname. Will not download if folder exist.'
     destfold=Path(destfold)
     if (destfold/fname).exists():
-        warnings.warn('Folder already exist ' + str(destfold/fname))
+        warnings.warn('Folder already exist, so will not download again: ' + str(destfold/fname))
     else:
         import gdown
         path=gdown.download(f'https://drive.google.com/uc?id={fid}', str(destfold/f'{name}.tar.gz'))

@@ -3,3 +3,4 @@ from .functional import *
 from .images import *
 from .fastdl import *
 from .datadownload import *
+from .random import *
