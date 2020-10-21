@@ -5,19 +5,23 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"lmap": "00_functional.ipynb",
          "lzip": "00_functional.ipynb",
          "lfilter": "00_functional.ipynb",
+         "lrange": "00_functional.ipynb",
          "L.all": "00_functional.ipynb",
          "isinstance": "00_functional.ipynb",
          "show_image": "01_images.ipynb",
          "show_images": "01_images.ipynb",
          "flatfolder2dl": "02_fastdl.ipynb",
          "untar_fdrive": "03_datadownload.ipynb",
-         "RandomState": "04_random.ipynb"}
+         "RandomState": "04_random.ipynb",
+         "Tensor.shape_is": "05_tensor.ipynb",
+         "Tensor.asrt_sz": "05_tensor.ipynb"}
 
 modules = ["functional.py",
            "images.py",
            "fastdl.py",
            "datadownload.py",
-           "random.py"]
+           "random.py",
+           "tensor.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
