@@ -17,3 +17,4 @@ dependencies:
 - nbdev
 - ipywidgets
 - nodejs
+- gdown

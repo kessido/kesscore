@@ -8,12 +8,16 @@ from .functional import *
 from functools import wraps
 
 # Cell
-@typedispatch
-def _convert(im:(str,Path)):     return load_image(im)
-@typedispatch
-def _convert(im:(torch.Tensor)): return to_image(im)
-
+def _convert(im):
+    if isinstance(im, (str, Path)): im = load_image(im)
+    if isinstance(im, Tensor):      im = to_image(im)
+    return im
 def _converts(im): return L(list(im)).map(_convert)
+
+def _convert_title(o):
+    if isinstance(o, (str,Path)): o = (o,o)
+    return (_convert(o[0]), o[1]) if isinstance(o,tuple) else _convert(o)
+def _convert_titles(o): return L(list(o)).map(_convert_title)
 
 def _a2f(f, g):
     'apply `g` to first arguments of `f`'
@@ -22,23 +26,11 @@ def _a2f(f, g):
     return _inner
 
 # Cell
-show_image  = _a2f(show_image,  _convert)
-show_images = _a2f(show_images, _converts)
+show_image        = _a2f(show_image       , _convert)
+show_images       = _a2f(show_images      , _converts)
+show_titled_image = _a2f(show_titled_image, _convert_title)
 
 # Cell
-@typedispatch
-def _convert_titles(o): return _convert(o)
-@typedispatch
-def _convert_titles(o:tuple): assert len(o)==2; return (_convert(o[0]), o[1])
-@typedispatch
-def _convert_titles(o:(str,Path)): return (_convert(o), o)
-
-# Cell
-_show_titled_image = show_titled_image
-@wraps(_show_titled_image)
-def show_titled_image(o, *args, **kwargs):
-    return _show_titled_image(o, *args, **kwargs)
-
 @delegates(show_images)
 def show_titled_images(o, **kwargs):
     o = L(list(o)).map(_convert_titles)
