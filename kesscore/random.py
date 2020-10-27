@@ -39,7 +39,9 @@ def _choice(a, size=None, **kwargs):
 # Cell
 @docs
 class RandomState:
-    def __init__(self, seed=None): self.rs=np.random.RandomState(seed=seed)
+    def __init__(self, seed=None):
+        if seed is None: seed = random.randint(0, 10**9)
+        self.rs = np.random.RandomState(seed=seed)
     def perm(self,a): return self.rs.permutation(range(a) if isinstance(a,numbers.Integral) else a)
     def choice(self,a,size=None,cum_weights=None): return _choice(a,size=size,nprs=self.rs,replace=True, cum_weights=cum_weights)
     def sample(self,a,size=None,p=None):           return _choice(a,size=size,nprs=self.rs,replace=False,p=p)
@@ -48,7 +50,7 @@ class RandomState:
     def bool(self,size=None,p=0.5): return self.rand(size) < p
     def int(self,low,high=None,size=None,dtype=int): return self.rs.randint(low=low,high=high,size=size,dtype=dtype)
     _docs = dict(
-        cls_doc = 'RandomState numpy\pythonic. if seed not given, randomly select one.',
+        cls_doc = 'RandomState numpy\pythonic. if seed not given, randomly select one using python random.',
         perm    = 'Return a random permutation',
         choice  = 'Get sample with replacements',
         sample  = 'Get sample w.o  replacements',

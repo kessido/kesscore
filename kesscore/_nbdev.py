@@ -11,7 +11,11 @@ index = {"lmap": "00_functional.ipynb",
          "Lfilter": "00_functional.ipynb",
          "Lrange": "00_functional.ipynb",
          "L.all": "00_functional.ipynb",
+         "L.all_eq": "00_functional.ipynb",
+         "L.assert_all_eq": "00_functional.ipynb",
+         "L.assert_eq": "00_functional.ipynb",
          "isinstance": "00_functional.ipynb",
+         "compose_star": "00_functional.ipynb",
          "show_image": "01_images.ipynb",
          "show_images": "01_images.ipynb",
          "show_titled_image": "01_images.ipynb",
@@ -24,15 +28,20 @@ index = {"lmap": "00_functional.ipynb",
          "untar_general": "02_download.ipynb",
          "untar_wget": "02_download.ipynb",
          "untar_dropbox": "02_download.ipynb",
+         "lshape": "03_tensor.ipynb",
          "Tensor.shape_is": "03_tensor.ipynb",
-         "Tensor.asrt_sz": "03_tensor.ipynb",
-         "RandomState": "04_random.ipynb"}
+         "Tensor.assert_shape": "03_tensor.ipynb",
+         "RandomState": "04_random.ipynb",
+         "RevGradFunc": "05_domainadaptation.ipynb",
+         "RevGrad": "05_domainadaptation.ipynb",
+         "revgrad": "05_domainadaptation.ipynb"}
 
 modules = ["functional.py",
            "images.py",
            "download.py",
            "tensor.py",
-           "random.py"]
+           "random.py",
+           "domainadaptation.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
