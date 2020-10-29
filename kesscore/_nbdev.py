@@ -2,7 +2,8 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"lmap": "00_functional.ipynb",
+index = {"zip_cycle_longest": "00_functional.ipynb",
+         "lmap": "00_functional.ipynb",
          "lzip": "00_functional.ipynb",
          "lfilter": "00_functional.ipynb",
          "lrange": "00_functional.ipynb",
@@ -11,10 +12,12 @@ index = {"lmap": "00_functional.ipynb",
          "Lfilter": "00_functional.ipynb",
          "Lrange": "00_functional.ipynb",
          "L.all": "00_functional.ipynb",
+         "L.assert_all": "00_functional.ipynb",
          "L.all_eq": "00_functional.ipynb",
          "L.assert_all_eq": "00_functional.ipynb",
          "L.assert_eq": "00_functional.ipynb",
          "isinstance": "00_functional.ipynb",
+         "assert_isinstance": "00_functional.ipynb",
          "compose_star": "00_functional.ipynb",
          "show_image": "01_images.ipynb",
          "show_images": "01_images.ipynb",
@@ -31,17 +34,26 @@ index = {"lmap": "00_functional.ipynb",
          "lshape": "03_tensor.ipynb",
          "Tensor.shape_is": "03_tensor.ipynb",
          "Tensor.assert_shape": "03_tensor.ipynb",
+         "interleaved": "03_tensor.ipynb",
          "RandomState": "04_random.ipynb",
+         "reproducibility": "04_random.ipynb",
          "RevGradFunc": "05_domainadaptation.ipynb",
          "RevGrad": "05_domainadaptation.ipynb",
-         "revgrad": "05_domainadaptation.ipynb"}
+         "revgrad": "05_domainadaptation.ipynb",
+         "MultiActs": "06_mlp.ipynb",
+         "Linear": "06_mlp.ipynb",
+         "MLP": "06_mlp.ipynb",
+         "is_not_close": "07_tests.ipynb",
+         "test_not_close": "07_tests.ipynb"}
 
 modules = ["functional.py",
            "images.py",
            "download.py",
            "tensor.py",
            "random.py",
-           "domainadaptation.py"]
+           "domainadaptation.py",
+           "mlp.py",
+           "tests.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
