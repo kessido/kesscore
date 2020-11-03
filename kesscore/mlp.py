@@ -49,7 +49,7 @@ class Linear(Module):
         return compose(*fs)(x)
 
 # Cell
-def _linear_act_norm(c_in, c_out, *, is_final, groups, bias=True, bn=nn.BatchNorm1d, bn_params={}, acts=[nn.LeakyReLU], acts_params={}):
+def _linear_act_norm(c_in, c_out, *, groups, is_final=False, bias=True, bn=nn.BatchNorm1d, bn_params={}, acts=[nn.LeakyReLU], acts_params={}):
     model = Linear(c_in, c_out, bias, groups)
     if is_final: return model, c_in, c_out
     acts, expansion = _init_acts(acts=acts, acts_params=acts_params)
@@ -75,12 +75,13 @@ def MLP(*, c_in=None, c_mid=None, c_out=None, n_layers=None, channels=None, grou
     if c_in is not None: channels = _build_channels(c_in=c_in, c_mid=c_mid, c_out=c_out, n_layers=n_layers)
     if heads is not None: channels,groups = _build_heads(channels=channels, heads=heads, groups=groups, in_groups=in_groups)
     assert len(channels) >= 2
-    blocks,c_in,g = OrderedDict(),channels[0],in_groups
+
+    kw=kwargs
+    blocks = OrderedDict(); c_in = channels[0]; kw['groups'] = in_groups
     for i,c_out in enumerate(channels[1:-1]):
-        m,_,c_in = _linear_act_norm(c_in,c_out,groups=g,is_final=False,**kwargs)
-        g = groups
-        blocks[f'block_{i}'] = m
-    if bias_last is not None: kwargs['bias'] = bias_last
-    head,*_ = _linear_act_norm(c_in,channels[-1],groups=in_groups,is_final=True,**kwargs)
-    blocks['head'] = head
+        blocks[f'block_{i}'],_,c_in = _linear_act_norm(c_in,c_out,**kw)
+        kw['groups'] = groups
+    kw['is_final'] = True
+    if bias_last is not None: kw['bias'] = bias_last
+    blocks['head'],*_ = _linear_act_norm(c_in,channels[-1],**kw)
     return nn.Sequential(blocks)
