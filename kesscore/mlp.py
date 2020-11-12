@@ -67,7 +67,7 @@ def _build_heads(*, channels, heads, groups, in_groups):
     return channels,groups
 
 # Cell
-@delegates(_linear_act_norm, but='groups')
+@delegates(_linear_act_norm, but='groups,is_final')
 def MLP(*, c_in=None, c_mid=None, c_out=None, n_layers=None, channels=None, groups=1, in_groups=1, heads=None, bias_last=True, **kwargs):
     test_all_eq(c_in, c_mid, c_out, n_layers, map=isinstance(NoneType))
     assert (c_in is None) != (channels is None),'either channels of in\\mid\\out\\nlayers'

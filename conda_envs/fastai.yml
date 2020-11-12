@@ -19,3 +19,4 @@ dependencies:
 - nodejs
 - gdown
 - optuna
+- termcolor

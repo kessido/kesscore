@@ -7,3 +7,4 @@ from .random import *
 from .tensor import *
 from .domainadaptation import *
 from .mlp import *
+from .script import *

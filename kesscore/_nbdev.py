@@ -15,6 +15,10 @@ index = {"zip_cycle_longest": "00_functional.ipynb",
          "L.all_eq": "00_functional.ipynb",
          "isinstance": "00_functional.ipynb",
          "compose_star": "00_functional.ipynb",
+         "L.group_by": "00_functional.ipynb",
+         "add_kwargs": "00_functional.ipynb",
+         "get_all_public_attr": "00_functional.ipynb",
+         "pcolkw": "00_functional.ipynb",
          "is_not_close": "01_tests.ipynb",
          "test_not_close": "01_tests.ipynb",
          "L.assert_all_eq": "01_tests.ipynb",
@@ -45,7 +49,9 @@ index = {"zip_cycle_longest": "00_functional.ipynb",
          "untar_drive": "07_download.ipynb",
          "untar_general": "07_download.ipynb",
          "untar_wget": "07_download.ipynb",
-         "untar_dropbox": "07_download.ipynb"}
+         "untar_dropbox": "07_download.ipynb",
+         "ParamRepr": "08_script.ipynb",
+         "Param.__repr__": "08_script.ipynb"}
 
 modules = ["functional.py",
            "tests.py",
@@ -54,7 +60,8 @@ modules = ["functional.py",
            "random.py",
            "domainadaptation.py",
            "mlp.py",
-           "download.py"]
+           "download.py",
+           "script.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
