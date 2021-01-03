@@ -50,8 +50,9 @@ index = {"zip_cycle_longest": "00_functional.ipynb",
          "untar_general": "07_download.ipynb",
          "untar_wget": "07_download.ipynb",
          "untar_dropbox": "07_download.ipynb",
-         "ParamRepr": "08_script.ipynb",
-         "Param.__repr__": "08_script.ipynb"}
+         "as_eval": "08_contextmanagers.ipynb",
+         "plot_func": "09_plots.ipynb",
+         "device": "10_modules.ipynb"}
 
 modules = ["functional.py",
            "tests.py",
@@ -61,7 +62,9 @@ modules = ["functional.py",
            "domainadaptation.py",
            "mlp.py",
            "download.py",
-           "script.py"]
+           "contextmanagers.py",
+           "plot.py",
+           "modules.py"]
 
 doc_url = "https://kessido.github.io/kesscore/"
 
